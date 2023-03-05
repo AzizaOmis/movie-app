@@ -1,0 +1,115 @@
+.movie{
+    display: flex;
+    flex-direction: row;
+    width: 475px;
+    height: 275px;
+    background-color: #FFFFFF;
+}
+.movie__poster{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 183px;
+}
+.movie__spin{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 184px;
+    height: 275px;  
+    background-color: white;
+}
+.movie__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 292px;
+    height: 275px;
+}
+.movie__about{
+    padding-left: 20px;
+    padding-right: 9px;
+    max-height: 218.3px;
+}
+.movie__title{
+    display: block;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 222px;
+    margin-top: 12px;
+}
+.movie__rating{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-family: 'Inter UI';
+    font-size: 12px;
+    line-height: 25px;
+    border-width: 2px;
+    border-style: solid;
+}
+.bad__rating{
+    border-color: var(--bad-rating);
+}
+.average__rating{
+    border-color: var(--average-rating);
+}
+.good__rating{
+    border-color: var(--good-rating);
+}
+.excellent__rating{
+    border-color: var(--excellent-rating);
+}
+.movie__release-date{
+    margin-top: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #827E7E;
+}
+.movie__genre-list{
+    display: flex;
+    margin-top: 7px;
+}
+.movie__genre{
+    margin-right: 8px;
+    height: 17px;    
+    padding-left: 2px;
+    padding-right: 2px;
+    font-family: 'Inter';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    background: #FAFAFA;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.movie__overview{
+    margin-top: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    overflow: hidden;
+}
+.movie__rate{
+    margin: 10px;
+    margin-bottom: 20px;
+}

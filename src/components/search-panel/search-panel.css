@@ -1,0 +1,18 @@
+.movies__search-panel{
+    width: 970px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: black;
+    margin-bottom: 34px;
+}
+.movies__search-panel:focus{
+    outline: none;
+    border: 1px solid black;
+}
