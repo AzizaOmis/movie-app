@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Movie from '../movie';
-import './movie-list.css';
+import Movie from '../Movie';
+
+import './MovieList.css';
 
 export default function MovieList({ data, guestSessionId, Api }) {
   let movies = data.map((item) => {

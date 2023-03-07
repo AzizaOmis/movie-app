@@ -1,7 +1,7 @@
 import React from 'react';
-import { Space, Alert, Spin, Pagination, Rate, Tabs } from 'antd';
+import { Alert, Pagination, Rate, Space, Spin, Tabs } from 'antd';
 
-import './custom-components.css';
+import './AntdCustomComponents.css';
 
 function MyAlert({ message, description, type }) {
   return (
@@ -9,6 +9,38 @@ function MyAlert({ message, description, type }) {
       <Alert className="movies_alert" message={message} description={description} type={type} showIcon />
     </Space>
   );
+}
+function MyError({ helloMessage, notFound, serverErr, noConnection, noData }) {
+  let message;
+  let description;
+  let type;
+  if (notFound) {
+    message = 'Not Found :(';
+    description = "Sorry, we didn't find a movie with that title";
+    type = 'warning';
+  }
+  if (helloMessage) {
+    message = 'Hello!';
+    description = 'Please enter the name of the movie and we will find it for you :)';
+    type = 'success';
+  }
+  if (serverErr) {
+    message = 'Server Error';
+    description = 'A server error occurred while loading data. Please try again later.';
+    type = 'error';
+  }
+  if (noConnection) {
+    message = 'Network Error';
+    description =
+      'Something is temporarily wrong with your network connection. Make sure you are connected to the Internet and then restart your browser.';
+    type = 'error';
+  }
+  if (noData) {
+    message = "It's empty here";
+    description = "You haven't rated any movies yet";
+    type = 'warning';
+  }
+  return <MyAlert message={message} description={description} type={type} />;
 }
 function MyPagination({ onPaginationChange, totalPages, page }) {
   return (
@@ -50,4 +82,4 @@ function MyTabs({ activeKey, onTabsChange }) {
   ];
   return <Tabs activeKey={activeKey} centered items={items} onChange={(activeKey) => onTabsChange(activeKey)} />;
 }
-export { MyAlert, MyPagination, MySpin, MyRate, MyTabs };
+export { MyError, MyPagination, MyRate, MySpin, MyTabs };

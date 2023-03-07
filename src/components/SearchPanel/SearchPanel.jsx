@@ -1,6 +1,7 @@
 import React from 'react';
-import './search-panel.css';
 import _debounce from 'lodash/debounce';
+
+import './SearchPanel.css';
 
 export default function SearchPanel({ getQueryValue }) {
   const onSearchChange = (e) => {

@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { MySpin, MyRate } from '../../services/custom-components';
-import { GenreContext } from '../genre-context';
-import './movie.css';
+import { GenreContext } from '../../context';
+import { MyRate, MySpin } from '../AntdCustomComponents';
+
+import './Movie.css';
 
 export default class Movie extends React.Component {
   state = {
@@ -54,7 +55,7 @@ export default class Movie extends React.Component {
       <div className="movie">
         <div className="movie__poster">
           {spin}
-          <img src={poster_path} onLoad={this.onload} />
+          <img className="movie__img" src={poster_path} onLoad={this.onload} />
         </div>
         <div className="movie__container">
           <div className="movie__about">
@@ -62,8 +63,8 @@ export default class Movie extends React.Component {
             <div className={className}>{vote_average}</div>
             <span className="movie__release-date">{release_date}</span>
             <ul className="movie__genre-list">{genres}</ul>
-            <p className="movie__overview">{overview}</p>
           </div>
+          <p className="movie__overview">{overview}</p>
           <MyRate onRateChange={this.onRateChange} value={rate} />
         </div>
       </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Api from '../../services/api';
-import { MyTabs } from '../../services/custom-components';
-import Error from '../../services/error';
-import './app.css';
-import SearchTab from '../search-tab';
-import RatedTab from '../rated-tab';
-import { GenreContext } from '../genre-context';
+import { GenreContext } from '../../context';
+import Api from '../../services/Api';
+import { MyError, MyTabs } from '../AntdCustomComponents';
+import RatedTab from '../RatedTab';
+import SearchTab from '../SearchTab';
+
+import './App.css';
 
 export default class App extends React.Component {
   _search = 'Search';
@@ -46,7 +46,7 @@ export default class App extends React.Component {
     const search = tab === this._search ? <SearchTab Api={this.Api} guestSessionId={guestSessionId} /> : null;
     const rated = tab === this._rated ? <RatedTab Api={this.Api} guestSessionId={guestSessionId} /> : null;
     const view = error ? (
-      <Error serverErr={true} />
+      <MyError serverErr={true} />
     ) : (
       <GenreContext.Provider value={this.genreList}>
         <MyTabs activeKey={tab} onTabsChange={this.onTabsChange} />

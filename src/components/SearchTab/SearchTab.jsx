@@ -1,9 +1,8 @@
 import React from 'react';
 
-import SearchPanel from '../search-panel';
-import MovieList from '../movie-list';
-import Error from '../../services/error';
-import { MyPagination, MySpin } from '../../services/custom-components';
+import { MyError, MyPagination, MySpin } from '../AntdCustomComponents';
+import MovieList from '../MovieList';
+import SearchPanel from '../SearchPanel';
 
 export default class SearchTab extends React.Component {
   _helloMessage = 'helloMessage';
@@ -125,7 +124,7 @@ export default class SearchTab extends React.Component {
     const hasErrorAlert = helloMessage || notFound || serverErr || noConnection;
     const spin = loading ? <MySpin /> : null;
     const err = hasErrorAlert ? (
-      <Error helloMessage={helloMessage} notFound={notFound} serverErr={serverErr} noConnection={noConnection} />
+      <MyError helloMessage={helloMessage} notFound={notFound} serverErr={serverErr} noConnection={noConnection} />
     ) : null;
     const movieList =
       hasErrorAlert || loading ? null : <MovieList data={data} guestSessionId={guestSessionId} Api={Api} />;
