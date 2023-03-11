@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { MyError, MyPagination, MySpin } from '../AntdCustomComponents';
+import CustomError from '../CustomError';
+import CustomPagination from '../CustomPagination';
+import CustomSpin from '../CustomSpin';
 import MovieList from '../MovieList';
 import SearchPanel from '../SearchPanel';
 
@@ -122,14 +124,14 @@ export default class SearchTab extends React.Component {
     const { data, loading, page, totalPages, error } = this.state;
     const { helloMessage, notFound, serverErr, noConnection } = error;
     const hasErrorAlert = helloMessage || notFound || serverErr || noConnection;
-    const spin = loading ? <MySpin /> : null;
+    const spin = loading ? <CustomSpin /> : null;
     const err = hasErrorAlert ? (
-      <MyError helloMessage={helloMessage} notFound={notFound} serverErr={serverErr} noConnection={noConnection} />
+      <CustomError helloMessage={helloMessage} notFound={notFound} serverErr={serverErr} noConnection={noConnection} />
     ) : null;
     const movieList =
       hasErrorAlert || loading ? null : <MovieList data={data} guestSessionId={guestSessionId} Api={Api} />;
     const pagination = hasErrorAlert ? null : (
-      <MyPagination onPaginationChange={this.onPaginationChange} totalPages={totalPages} page={page} />
+      <CustomPagination onPaginationChange={this.onPaginationChange} totalPages={totalPages} page={page} />
     );
     return (
       <React.Fragment>

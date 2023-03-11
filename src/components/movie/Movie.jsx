@@ -2,7 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { GenreContext } from '../../context';
-import { MyRate, MySpin } from '../AntdCustomComponents';
+import CustomRate from '../CustomRate/CustomRate';
+import CustomSpin from '../CustomSpin';
 
 import './Movie.css';
 
@@ -41,7 +42,7 @@ export default class Movie extends React.Component {
     });
     const spin = imgIsLoading ? (
       <div className="movie__spin">
-        <MySpin />
+        <CustomSpin />
       </div>
     ) : null;
     const className = classNames({
@@ -65,7 +66,7 @@ export default class Movie extends React.Component {
             <ul className="movie__genre-list">{genres}</ul>
           </div>
           <p className="movie__overview">{overview}</p>
-          <MyRate onRateChange={this.onRateChange} value={rate} />
+          <CustomRate onRateChange={this.onRateChange} value={rate} />
         </div>
       </div>
     );

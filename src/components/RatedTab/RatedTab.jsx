@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { MyError, MySpin } from '../AntdCustomComponents';
+import CustomError from '../CustomError';
+import CustomSpin from '../CustomSpin';
 import MovieList from '../MovieList';
 
 export default class RatedTab extends React.Component {
@@ -86,8 +87,10 @@ export default class RatedTab extends React.Component {
     const { data, loading, error } = this.state;
     const { noData, serverErr, noConnection } = error;
     const hasErrorAlert = noData || serverErr || noConnection;
-    const spin = loading ? <MySpin /> : null;
-    const err = hasErrorAlert ? <MyError noData={noData} serverErr={serverErr} noConnection={noConnection} /> : null;
+    const spin = loading ? <CustomSpin /> : null;
+    const err = hasErrorAlert ? (
+      <CustomError noData={noData} serverErr={serverErr} noConnection={noConnection} />
+    ) : null;
     const movieList =
       hasErrorAlert || loading ? null : <MovieList data={data} guestSessionId={guestSessionId} Api={Api} />;
     return (
