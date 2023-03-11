@@ -1,1 +1,1 @@
-https://movies-app-six-rosy.vercel.app/
+https://movies-app-azizaomis.vercel.app/
