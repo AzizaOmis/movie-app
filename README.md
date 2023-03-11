@@ -1,1 +1,1 @@
-https://movies-app-azizaomis.vercel.app/
+https://movies-in5pjj5tv-azizaomis.vercel.app/
